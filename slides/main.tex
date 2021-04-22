@@ -1,0 +1,264 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[12pt,ignorenonframetext,aspectratio=169]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph:
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+\centering
+\begin{beamercolorbox}[sep=16pt,center]{part title}
+  \usebeamerfont{part title}\insertpart\par
+\end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+\centering
+\begin{beamercolorbox}[sep=12pt,center]{part title}
+  \usebeamerfont{section title}\insertsection\par
+\end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{part title}
+  \usebeamerfont{subsection title}\insertsubsection\par
+\end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
+\else % if luatex or xelatex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+\usetheme[]{default}
+\usecolortheme{dove}
+\usefonttheme{structuresmallcapsserif}
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{hyperref}
+\hypersetup{
+            pdftitle={Title},
+            pdfauthor={Me},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\newif\ifbibliography
+\usepackage{listings}
+\newcommand{\passthrough}[1]{#1}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{stmaryrd}
+\usepackage{xfrac}
+\usepackage{xcolor}
+\usepackage{xspace}
+\usepackage{hyperref}
+\usepackage[backend=biber, style=alphabetic]{biblatex}
+\addbibresource{bib.bib}
+
+% \lstset{
+%    language=Coq
+% }
+
+\setbeamertemplate{footline}{%
+    \raisebox{5pt}{\makebox[\paperwidth]{\hfill\makebox[20pt]{\color{gray}
+          \scriptsize\insertframenumber}}}\hspace*{5pt}}
+
+\title{Title}
+\providecommand{\subtitle}[1]{}
+\subtitle{Subtitle}
+\author{Me}
+\providecommand{\institute}[1]{}
+\institute{Affiliation \and Something else}
+\date{Ferbruary 30, 2000}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Motivation}
+\protect\hypertarget{motivation}{}
+
+I did it because I wanted to!
+
+\end{frame}
+
+\begin{frame}{Contributions}
+\protect\hypertarget{contributions}{}
+
+\begin{itemize}
+\tightlist
+\item
+  one
+\item
+  two
+\item
+  three
+\end{itemize}
+
+\end{frame}
+
+\hypertarget{body}{%
+\section{Body}\label{body}}
+
+\begin{frame}{A list of tricks, really}
+\protect\hypertarget{a-list-of-tricks-really}{}
+
+\end{frame}
+
+\begin{frame}{Incremental list}
+\protect\hypertarget{incremental-list}{}
+
+\begin{itemize}[<+->]
+\tightlist
+\item
+  one
+\item
+  two
+\item
+  three
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Columns}
+\protect\hypertarget{columns}{}
+
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+column1
+\end{column}
+
+\begin{column}{0.48\textwidth}
+column2
+\end{column}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Cite something}
+\protect\hypertarget{cite-something}{}
+
+This, for example: \cite{wadlerTheoremsFree1989}
+
+\end{frame}
+
+\begin{frame}{Graphics}
+\protect\hypertarget{graphics}{}
+
+\centering
+
+\end{frame}
+
+\begin{frame}{LaTeX}
+\protect\hypertarget{latex}{}
+
+\begin{itemize}
+\tightlist
+\item
+  LaTeX inline \(1 \equiv 2\)
+\item
+  LaTeX equation
+\end{itemize}
+
+\[
+1 \equiv 2
+\]
+
+\end{frame}
+
+\begin{frame}[fragile]{Code fragment}
+\protect\hypertarget{code-fragment}{}
+
+\begin{verbatim}
+some code example
+\end{verbatim}
+
+\color{gray} This is gray.
+
+\end{frame}
+
+\hypertarget{conclusion}{%
+\section{Conclusion}\label{conclusion}}
+
+\begin{frame}{Conclusion 1}
+\protect\hypertarget{conclusion-1}{}
+
+Something serious
+
+\end{frame}
+
+\begin{frame}{Conclusion 2}
+\protect\hypertarget{conclusion-2}{}
+
+Something fun
+
+\end{frame}
+
+\begin{frame}
+
+\centering
+
+Thanks for all the fish!
+
+\end{frame}
+
+\begin{frame}[allowframebreaks]{References}
+\protect\hypertarget{references}{}
+
+\bibliographytrue
+\printbibliography[heading=none]
+
+\end{frame}
+
+\begin{frame}{Backup}
+\protect\hypertarget{backup}{}
+
+\begin{itemize}
+\tightlist
+\item
+  Hey, we have backup slides!
+\end{itemize}
+
+\end{frame}
+
+\end{document}

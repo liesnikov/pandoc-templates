@@ -13,11 +13,14 @@ main.pdf: main.md bib.bib Makefile
 	pandoc --standalone main.md --bibliography bib.bib --pdf-engine=xelatex -o main.pdf
 
 # main.pdf: main.tex Makefile
-# 	latexmk -xelatex="xelatex -interaction=nonstopmode" -use-make main.tex
+# 	latexmk -xelatex="xelatex -interaction=nonstopmode" -pdf -use-make main.tex
 #
 
 main.tex: main.md Makefile
 	pandoc --standalone main.md --bibliography bib.bib --pdf-engine=xelatex -o main.tex
 
-allclean:
-	rm -f main.bbl main.aux main.log main.out main.pdf main.run.xml main.tex main.bcf main.blg main.toc
+allclean: clean
+	rm -f main.pdf main.tex
+
+clean:
+	rm -f *.aux *.log *.nav *.out *.snm *.toc *.vrb *.pk *.bbl *.blg *.bcf *.dvi *.fdb_latexmk *.fls *.run.xml
