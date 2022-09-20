@@ -7,7 +7,7 @@ tex: main.tex
 reset: allclean pdf
 
 main.pdf: main.tex
-	latexmk -xelatex="xelatex -interaction=nonstopmode" -pdf -use-make main.tex
+	latexmk -xelatex="xelatex -interaction=nonstopmode" -pdfxe -use-make main.tex
 
 main.tex: main.md macros.tex Makefile
 	pandoc --standalone \
