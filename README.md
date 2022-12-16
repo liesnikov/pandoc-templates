@@ -13,4 +13,14 @@ A collection of templates I use. 💁
   mv doc ../; cd ../; \
   rm -rf pandoc-templates;
   ```
-* [Slides](./slides)
+* [Slides](./slides). To clone `slides` subdirectory run
+  ``` bash
+  git clone \
+  --depth 1  \
+  --filter=blob:none  \
+  --sparse \
+  git@github.com:liesnikov/pandoc-templates.git; \
+  cd pandoc-templates; git sparse-checkout set slides; \
+  mv slides ../; cd ../; \
+  rm -rf pandoc-templates;
+  ```
