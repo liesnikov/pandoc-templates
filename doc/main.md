@@ -2,19 +2,23 @@
 title: 'Title'
 subtitle: Subtitle
 author: Me
-
-link-citations: true
-
 output: pdf_document
 
+documentclass: scrartcl
+geometry: "left=2cm,right=2cm,top=1cm,bottom=2.2cm"
+numbersections: true
+parindent: 1cm
+
+colorlinks: true
+link-citations: true
+
+
+fontsize: 12pt
 mainfont: 'Source Serif 4'
+seriffont: 'Source Serif 4'
 sansfont: 'Source Sans 3'
 monofont: 'Source Code Pro'
 
-documentclass: scrartcl
-geometry: "left=2cm,right=2cm,top=1cm,bottom=2cm"
-parindent: 1cm
-fontsize: 12pt
 header-includes: |
     \usepackage{todonotes}
 ---
